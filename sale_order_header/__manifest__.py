@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2017 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Author: Tawasta
+#    Copyright 2020 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -22,10 +21,10 @@
 {
     'name': 'Header for Sale Orders',
     'summary': 'New field for SO header/title',
-    'version': '12.0.1.0.0',
+    'version': '12.0.1.0.1',
     'category': 'Sales',
     'website': 'https://github.com/Tawasta/sale-workflow',
-    'author': 'Oy Tawasta Technologies Ltd.',
+    'author': 'Tawasta',
     'license': 'AGPL-3',
     'application': False,
     'installable': True,
@@ -37,6 +36,7 @@
         'sale',
     ],
     'data': [
+        'report/sale_order_report.xml',
         'views/account_invoice.xml',
         'views/sale_order.xml',
     ],
