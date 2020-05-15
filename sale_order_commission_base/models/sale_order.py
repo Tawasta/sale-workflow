@@ -22,5 +22,6 @@ class SaleOrder(models.Model):
     def _compute_commission_base(self):
         for record in self:
             lines = record.mapped('order_line')
-            price = [(x.price_unit * x.product_uom_qty - x.discount) for x in lines]
+            price = [(x.product_id.lst_price * x.product_uom_qty *
+                    (1 - (x.discount or 0.0) / 100.0)) for x in lines]
             record.commission_base = sum(price)
