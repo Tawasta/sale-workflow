@@ -46,11 +46,15 @@ class SaleOrder(models.Model):
                         break
                     item = items[index]
 
-                    if (item.product_tmpl_id and item.product_tmpl_id.categ_id
-                            == categ and item.min_quantity <=
-                            categ_products.get(categ)[0] and
-                            item.product_tmpl_id ==
-                            line.product_id.product_tmpl_id):
+                    prod_tmpl = item.product_tmpl_id
+
+                    # Get item's price_surcharge-value only if
+                    #     - Product template is used
+                    #     - Quantitity used on item is equal or less than SO line qty
+                    #     - Product template is the same as SO line's product template
+                    if (prod_tmpl and prod_tmpl.categ_id == categ and
+                            item.min_quantity <= categ_products.get(categ)[0] and
+                            prod_tmpl == line.product_id.product_tmpl_id):
                         smallest_qty = item.min_quantity
                         # price_surcharge-field is item's added price and this is
                         # used to substitute sale order line's unit price
