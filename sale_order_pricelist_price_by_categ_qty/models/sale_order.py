@@ -18,13 +18,13 @@ class SaleOrder(models.Model):
         for line in self.order_line:
             product_category = line.product_id.categ_id
             if product_category:
-                qty = categ_products.get(
+                qty_and_line = categ_products.get(
                     product_category, [0, list(sale_line_model)]
                 )
                 # Result is a Python dictionary where keys are product categories
                 # and values are sale order line records
                 categ_products[product_category] = [
-                    qty[0] + line.product_uom_qty, qty[1] + [line]
+                    qty_and_line[0] + line.product_uom_qty, qty_and_line[1] + [line]
                 ]
 
         # items are records within pricelist
