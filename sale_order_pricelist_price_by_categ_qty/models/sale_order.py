@@ -69,6 +69,8 @@ class SaleOrder(models.Model):
                         break
                     item = items[index]
 
+                    # Only use items whose time period has not ended and if item has
+                    # a starting date, then it needs to be earlier than current date
                     if ((item.date_end and (date_now - item.date_end).days > 0)
                             or (item.date_start
                                 and (date_now - item.date_start).days < 0)):
