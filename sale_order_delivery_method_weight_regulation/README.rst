@@ -6,11 +6,11 @@
 Sale Order Delivery method's weight regulation
 ==============================================
 
-This module adds a functionality to show delivery methods allowed
-by total delivery weight. Sale order lines' products' weights are
-added together and compared to Delivery method's maximum weight.
-If the weight is greater than maximum weight, then Delivery method
-cannot be used on Sale order.
+This module adds a functionality to show those delivery methods which are
+allowed by total delivery weight. Sale order lines' products' weights are
+added together and compared to Delivery method's maximum and minimum weights.
+If the weight is greater than Delivery method's maximum weight or less than
+minimum weight, then that Delivery method cannot be used on Sale order.
 
 Configuration
 =============
