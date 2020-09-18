@@ -8,10 +8,8 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='carrier_id']" position="after">
                 <field name="total_delivery_weight" invisible="1"/>
-                <group>
-                    <field name="max_weight" invisible="1"/>
-                    <field name="min_weight" invisible="1"/>
-                </group>
+                <field name="max_weight" invisible="1"/>
+                <field name="min_weight" invisible="1"/>
             </xpath>
             <xpath expr="//field[@name='carrier_id']" position="attributes">
                 <attribute name="domain">['&amp;', '|', ('max_weight', '=', False), ('max_weight', '&gt;=', total_delivery_weight), '|', ('min_weight', '=', False), ('min_weight', '&lt;=', total_delivery_weight)]</attribute>
