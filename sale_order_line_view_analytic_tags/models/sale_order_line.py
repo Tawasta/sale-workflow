@@ -23,7 +23,8 @@ class SaleOrderLine(models.Model):
     @api.multi
     @api.depends('analytic_tag_ids')
     def _compute_analytic_tag_names(self):
-        lines = self.env['sale.order.line'].search([])
+        lines = self.env['sale.order.line'].search(
+                [('analytic_tag_ids','!=',False)])
         for line in lines:
             names = [x.name for x in line.analytic_tag_ids]
             names.sort()
