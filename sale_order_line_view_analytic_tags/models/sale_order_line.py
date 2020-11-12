@@ -21,7 +21,7 @@ class SaleOrderLine(models.Model):
             return [('id', 'in', [x.id for x in recs])]
 
     @api.multi
-    @api.depends('analytic_tag_ids', 'analytic_tag_name')
+    @api.depends('analytic_tag_ids')
     def _compute_analytic_tag_names(self):
         lines = self.env['sale.order.line'].search([])
         for line in lines:
