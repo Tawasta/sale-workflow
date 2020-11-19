@@ -27,8 +27,11 @@
         <field name="name">Sale Order Lines</field>
         <field name="res_model">sale.order.line</field>
         <field name="view_type">form</field>
-        <field name="view_mode">tree,pivot,graph</field>
-        <field name="view_id" ref="view_order_line_tree"/>
+        <field name="view_mode">tree,pivot,graph,form</field>
+        <field name="view_ids"
+            eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('sale_order_line_view.view_order_line_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('sale.view_order_form')})]"/>
     </record>
 
     <menuitem id="menu_sale_order_line"
