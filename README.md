@@ -1,3 +1,5 @@
+# MIGRATED TO https://gitlab.com/tawasta/odoo/sale-workflow !
+
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 [![Build Status](https://travis-ci.org/Tawasta/sale-workflow.svg?branch=12.0)](https://travis-ci.org/Tawasta/sale-workflow)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/e3b9f2bc62a34626809482ba44fc8e90)](https://www.codacy.com/app/Tawasta/sale-workflow?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Tawasta/sale-workflow&amp;utm_campaign=Badge_Grade)
